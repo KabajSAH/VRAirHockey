@@ -30,6 +30,7 @@ public class ScoringManager : MonoBehaviour
 
         score1 = 0;
         score2 = 0;
+        pallet.SetActive(false);
     }
     
     public void AddScore(int player)
@@ -43,11 +44,15 @@ public class ScoringManager : MonoBehaviour
             EndGame();
     }
 
-    public void EndGame()
+    private void EndGame()
     {
-        //TODO
         if (score1 > score2) Debug.Log(score1 > score2 ? "Player 1 wins!" : "Player 2 wins!");
+        
+        pallet.SetActive(false);
+    }
 
+    public void StartGame()
+    {
         score1 = 0;
         score2 = 0;
         UpdateScoreTexts();
@@ -56,6 +61,7 @@ public class ScoringManager : MonoBehaviour
         Rigidbody rb = pallet.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+        pallet.SetActive(true);
     }
 
     private void UpdateScoreTexts()
