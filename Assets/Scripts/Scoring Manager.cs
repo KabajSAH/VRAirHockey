@@ -14,6 +14,10 @@ public class ScoringManager : MonoBehaviour
     
     public int score1;
     public int score2;
+
+    public int maxScore = 10;
+    public Vector3 palletRespawnPoint;
+    public GameObject pallet;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,7 @@ public class ScoringManager : MonoBehaviour
 
         score1 = 0;
         score2 = 0;
+        pallet.SetActive(false);
     }
     
     public void AddScore(int player)
@@ -34,8 +39,31 @@ public class ScoringManager : MonoBehaviour
         if (player == 2) score2++;
         
         UpdateScoreTexts();
+        
+        if(score1 >= maxScore || score2 >= maxScore)
+            EndGame();
     }
-    
+
+    private void EndGame()
+    {
+        if (score1 > score2) Debug.Log(score1 > score2 ? "Player 1 wins!" : "Player 2 wins!");
+        
+        pallet.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        score1 = 0;
+        score2 = 0;
+        UpdateScoreTexts();
+        
+        pallet.transform.position = palletRespawnPoint;
+        Rigidbody rb = pallet.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        pallet.SetActive(true);
+    }
+
     private void UpdateScoreTexts()
     {
         scoreTexts[0].text = score1 + "  -  " + score2;
