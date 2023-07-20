@@ -30,7 +30,6 @@ public class ScoringManager : MonoBehaviour
     
     public void AddScore(int player)
     {
-        Debug.Log("GOAAAAAAAAAL");
         if (player == 1) score1++;
         if (player == 2) score2++;
         
