@@ -8,7 +8,7 @@ public class ScoringArea : MonoBehaviour
     public int associatedPlayer;
     public GameObject palette;
     private ScoringManager _scoringManager;
-    public Vector3 respawnOffset;
+    public Transform respawn;
     
     // Start is called before the first frame update
     public void SetScoringManager(ScoringManager scoringManager)
@@ -21,7 +21,7 @@ public class ScoringArea : MonoBehaviour
         if (other.gameObject == palette)
         {
             _scoringManager.AddScore(associatedPlayer);
-            palette.transform.position = gameObject.transform.position + respawnOffset;
+            palette.transform.position = respawn.position;
             Rigidbody rb = palette.GetComponent<Rigidbody>();
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;

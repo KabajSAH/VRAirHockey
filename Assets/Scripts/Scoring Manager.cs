@@ -16,8 +16,11 @@ public class ScoringManager : MonoBehaviour
     public int score2;
 
     public int maxScore = 10;
-    public Vector3 palletRespawnPoint;
+    public Transform palletRespawnPoint;
     public GameObject pallet;
+    public Material scoreMat;
+
+    private Color _defaultScoreColor;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,8 @@ public class ScoringManager : MonoBehaviour
             ScoringArea scoringAreaScript = scoringArea.GetComponent<ScoringArea>();
             scoringAreaScript.SetScoringManager(this);
         }
+
+        _defaultScoreColor = new Color(.5f, .5f, .5f, 1f);
 
         score1 = 0;
         score2 = 0;
@@ -46,18 +51,22 @@ public class ScoringManager : MonoBehaviour
 
     private void EndGame()
     {
-        if (score1 > score2) Debug.Log(score1 > score2 ? "Player 1 wins!" : "Player 2 wins!");
+        if (score1 > score2) scoreMat.color = Color.blue;
+        else scoreMat.color = Color.red;
+        //Debug.Log(score1 > score2 ? "Player 1 wins!" : "Player 2 wins!");
+
         
         pallet.SetActive(false);
     }
 
     public void StartGame()
     {
+        scoreMat.color = _defaultScoreColor;
         score1 = 0;
         score2 = 0;
         UpdateScoreTexts();
         
-        pallet.transform.position = palletRespawnPoint;
+        pallet.transform.position = palletRespawnPoint.position;
         Rigidbody rb = pallet.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;

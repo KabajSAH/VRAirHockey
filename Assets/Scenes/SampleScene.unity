@@ -1428,7 +1428,7 @@ Transform:
   m_GameObject: {fileID: 1359310387}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.266, y: 0.505, z: -0.008}
+  m_LocalPosition: {x: -1.974, y: 0.36, z: 0.065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1481,10 +1481,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.8351018
+  m_Radius: 0.24131899
+  m_Height: 1.3850825
   m_Direction: 1
-  m_Center: {x: -0, y: 0.647679, z: 0}
+  m_Center: {x: 1.3076336e-17, y: 0.42905366, z: 0.016545162}
 --- !u!1 &1442094478
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,7 +2146,7 @@ PrefabInstance:
     - target: {fileID: 3134652795022468533, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.072
+      value: 0.759
       objectReference: {fileID: 0}
     - target: {fileID: 3134652795022468533, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
         type: 3}
@@ -2198,6 +2198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HockeyTablePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5375808742368617587, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3256199804c8d8345994b5a9df58c914, type: 2}
     - target: {fileID: 5622423400995354721, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
         type: 3}
       propertyPath: m_LocalPosition.y
