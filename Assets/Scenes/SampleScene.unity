@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1367,6 +1367,16 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 395317099}
+    - target: {fileID: 3265618146521269822, guid: f2df7f1859be46f48b1aa53919feee61,
+        type: 3}
+      propertyPath: palletRespawnPoint.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265618146521269822, guid: f2df7f1859be46f48b1aa53919feee61,
+        type: 3}
+      propertyPath: palletRespawnPoint.y
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3748676203966546187, guid: f2df7f1859be46f48b1aa53919feee61,
         type: 3}
       propertyPath: m_Constraints

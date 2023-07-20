@@ -1787,6 +1787,9 @@ MonoBehaviour:
   - {fileID: 5191203479720510364}
   score1: 0
   score2: 0
+  maxScore: 10
+  palletRespawnPoint: {x: 0, y: 0, z: 0}
+  pallet: {fileID: 1862896810056284714}
 --- !u!1 &8873533696821623173
 GameObject:
   m_ObjectHideFlags: 0
