@@ -10,7 +10,6 @@ public class ScoringArea : MonoBehaviour
     private ScoringManager _scoringManager;
     public Transform respawn;
     
-    // Start is called before the first frame update
     public void SetScoringManager(ScoringManager scoringManager)
     {
         _scoringManager = scoringManager;

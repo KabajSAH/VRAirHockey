@@ -19,6 +19,10 @@ public class ScoringManager : MonoBehaviour
     public Transform palletRespawnPoint;
     public GameObject pallet;
     public Material scoreMat;
+    public AudioSource victoryAudioSource;
+    public AudioSource loseAudioSource;
+    public AudioSource playerGoalAudioSource;
+    public AudioSource botGoalAudioSource;
 
     private Color _defaultScoreColor;
     
@@ -40,8 +44,17 @@ public class ScoringManager : MonoBehaviour
     
     public void AddScore(int player)
     {
-        if (player == 1) score1++;
-        if (player == 2) score2++;
+        if (player == 1)
+        {
+            score1++;
+            botGoalAudioSource.Play();
+        }
+
+        if (player == 2)
+        {
+            score2++;
+            playerGoalAudioSource.Play();
+        }
         
         UpdateScoreTexts();
         
@@ -51,16 +64,25 @@ public class ScoringManager : MonoBehaviour
 
     private void EndGame()
     {
-        if (score1 > score2) scoreMat.color = Color.blue;
-        else scoreMat.color = Color.red;
-        //Debug.Log(score1 > score2 ? "Player 1 wins!" : "Player 2 wins!");
+        if (score1 > score2)
+        {
+            scoreMat.color = Color.blue;
+            loseAudioSource.Play();
+        }
+        else
+        {
+            scoreMat.color = Color.red;
+            victoryAudioSource.Play();
+        }
 
-        
         pallet.SetActive(false);
     }
 
     public void StartGame()
     {
+        victoryAudioSource.Stop();
+        loseAudioSource.Stop();
+        
         scoreMat.color = _defaultScoreColor;
         score1 = 0;
         score2 = 0;
