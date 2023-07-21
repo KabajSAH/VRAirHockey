@@ -5,18 +5,19 @@ using UnityEngine;
 
 public class PlaySound : MonoBehaviour
 {
-    private AudioSource _audioSource;
-
-    void Start()
-    {
-        _audioSource = GetComponent<AudioSource>();
-    }
+    public AudioSource wallAudioSource;
+    public AudioSource paletteAudioSource;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.CompareTag("CollisionSound"))
+        if (collision.collider.gameObject.CompareTag("WallCollisionSound"))
         {
-            _audioSource.Play();
+            wallAudioSource.Play();
+        }
+        
+        if (collision.collider.gameObject.CompareTag("PaletteCollisionSound"))
+        {
+            paletteAudioSource.Play();
         }
     }
 }
