@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 6902915795497953743}
   - component: {fileID: 3223605001199609766}
   - component: {fileID: 5937335869984014734}
+  - component: {fileID: 4798729864149546181}
   - component: {fileID: 2040462570097832565}
   m_Layer: 3
   m_Name: palet (bot)
@@ -413,6 +414,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4798729864149546181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160481533297364566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cdaa6081954b8f4b9e30827234187c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  palette: {fileID: 6534947035485940398}
 --- !u!114 &2040462570097832565
 MonoBehaviour:
   m_ObjectHideFlags: 0
