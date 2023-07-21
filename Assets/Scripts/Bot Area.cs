@@ -10,6 +10,8 @@ public class BotArea : MonoBehaviour
     
     public GameObject bot;
     private Bot _botScript;
+    
+    public bool critical = false;
 
     private void Start()
     {
@@ -20,12 +22,12 @@ public class BotArea : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other == _paletteCollider)
-            _botScript.SetTracking(true);
+            _botScript.SetTracking(true, critical);
     }
     
     private void OnTriggerExit(Collider other)
     {
         if(other == _paletteCollider)
-            _botScript.SetTracking(false);
+            _botScript.SetTracking(false, critical);
     }
 }

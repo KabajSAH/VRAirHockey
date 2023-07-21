@@ -10,7 +10,10 @@ public class Bot : MonoBehaviour
     private Vector3 _startingPosition;
     private Rigidbody _rigidbody;
     public float force = 3f;
+    public float criticalModifier = 2f;
+    
     private bool _tracking = false;
+    private bool _critical = false;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,8 @@ public class Bot : MonoBehaviour
     }
 
     // Update is called once per frame
+    
+    private Vector3 _lastPosition = Vector3.zero;
     void Update()
     {
         if (!_tracking)
@@ -37,15 +42,33 @@ public class Bot : MonoBehaviour
         }
         
         Vector3 palettePosition = _paletteTransform.position;
+        Vector3 direction;
+        float forceModifier = 1f;
+        if (!_critical)
+        {
+            if(_lastPosition == Vector3.zero) return;
+            Vector3 trackingDirection = (palettePosition - _lastPosition).normalized;
+            
+            direction = (trackingDirection + (palettePosition - transform.position).normalized).normalized;
+            _lastPosition = palettePosition;
+        }
+        else
+        {
+            forceModifier = criticalModifier;
+            direction = (palettePosition - transform.position).normalized;
+        }
 
-        Vector3 direction = (palettePosition - transform.position).normalized;
         
-        _rigidbody.AddForce(direction * force);
-        
+        _rigidbody.AddForce(direction * (force * forceModifier));
     }
     
-    public void SetTracking(bool tracking)
+    public void SetTracking(bool status, bool critical)
     {
-        _tracking = tracking;
+        if(critical) _critical = status;
+        else
+        {
+            _tracking = status;
+            _lastPosition = Vector3.zero;
+        }
     }
 }
