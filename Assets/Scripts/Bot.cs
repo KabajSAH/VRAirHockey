@@ -42,23 +42,11 @@ public class Bot : MonoBehaviour
         }
         
         Vector3 palettePosition = _paletteTransform.position;
-        Vector3 direction;
         float forceModifier = 1f;
-        if (!_critical)
-        {
-            if(_lastPosition == Vector3.zero) return;
-            Vector3 trackingDirection = (palettePosition - _lastPosition).normalized;
-            
-            direction = (trackingDirection + (palettePosition - transform.position).normalized).normalized;
-            _lastPosition = palettePosition;
-        }
-        else
-        {
-            forceModifier = criticalModifier;
-            direction = (palettePosition - transform.position).normalized;
-        }
-
+        if (_critical)forceModifier = criticalModifier;
         
+        Vector3 direction = (palettePosition - transform.position).normalized;
+
         _rigidbody.AddForce(direction * (force * forceModifier));
     }
     
