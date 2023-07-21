@@ -2143,6 +2143,21 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 116
       objectReference: {fileID: 0}
+    - target: {fileID: 627503982583949512, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: m_TagString
+      value: WallCollisionSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160481533297364566, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: m_TagString
+      value: PaletteCollisionSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053125195725406271, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: m_TagString
+      value: WallCollisionSound
+      objectReference: {fileID: 0}
     - target: {fileID: 2755386697621920176, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
         type: 3}
       propertyPath: m_Material
@@ -2222,6 +2237,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 13400000, guid: 61e4ae9faef9fba47a312a9a176ff356,
         type: 2}
+    - target: {fileID: 4757811385771857150, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: m_TagString
+      value: WallCollisionSound
+      objectReference: {fileID: 0}
     - target: {fileID: 4798729864149546181, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
         type: 3}
       propertyPath: force
@@ -2236,6 +2256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HockeyTablePrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126972962811611909, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5256287692337656404, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
         type: 3}
@@ -2289,12 +2314,48 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 395317099}
+    - target: {fileID: 7222575780372975944, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: m_TagString
+      value: PaletteCollisionSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589711262954243336, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: loseAudioSource
+      value: 
+      objectReference: {fileID: 7504460627087465583}
+    - target: {fileID: 7589711262954243336, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: botGoalAudioSource
+      value: 
+      objectReference: {fileID: 7504460627087465585}
+    - target: {fileID: 7589711262954243336, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: victoryAudioSource
+      value: 
+      objectReference: {fileID: 7504460627087465584}
+    - target: {fileID: 7589711262954243336, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: playerGoalAudioSource
+      value: 
+      objectReference: {fileID: 7504460627087465586}
+    - target: {fileID: 7770282029125252307, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: m_TagString
+      value: WallCollisionSound
+      objectReference: {fileID: 0}
     - target: {fileID: 7966942208999280945, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.2738
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8503140012145109682, guid: 9cb9c3b435c075f4cab6da0c52c5d986,
+        type: 3}
+      propertyPath: m_TagString
+      value: WallCollisionSound
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3511641802328695570, guid: 9cb9c3b435c075f4cab6da0c52c5d986, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2462,7 +2523,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 38f7ae402498103469fb9efaaee06ad6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2756,7 +2817,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 464577eea937054449b788ca6ad37917, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2852,7 +2913,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8dc6f9be6546df948b329f32502b68c0, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
