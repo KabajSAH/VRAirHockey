@@ -412,7 +412,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &4798729864149546181
 MonoBehaviour:
@@ -427,6 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   palette: {fileID: 6534947035485940398}
+  goal: {fileID: 6073290002222076604}
   force: 10
 --- !u!114 &2040462570097832565
 MonoBehaviour:
